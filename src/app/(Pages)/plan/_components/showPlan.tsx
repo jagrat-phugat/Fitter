@@ -46,7 +46,7 @@ export default function ShowPlan({ userId }: { userId: string }) {
 
   useEffect(() => {
     const fetchProgress = async () => {
-      const res = await fetch(`/api/progress?dates=${todayStr}`);
+      const res = await fetch(`/api/progress?date=${todayStr}`);
       const data = await res.json();
       if (data) setProgress({ workoutDone: data.workoutDone, dietDone: data.dietDone });
     };
