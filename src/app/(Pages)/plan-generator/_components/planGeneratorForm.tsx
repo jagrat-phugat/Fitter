@@ -22,6 +22,8 @@ import {
   Zap,
   Target,
   SplitSquareHorizontal,
+  ArrowBigLeft,
+  ArrowBigRight,
 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -143,8 +145,18 @@ export default function PlanGeneratorForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900 p-6">
-      <div className="w-full max-w-full bg-gradient-to-b from-gray-600 to-gray-700 via-gray-800 p-8 rounded-2xl shadow-lg space-y-6">
+    
+    <div className="min-h-screen w-full flex items-center justify-center bg-gray-900 p-6">
+      <div>
+      <div className="p-4">
+                <Link href="/plan">
+                <Button className="bg-black hover:bg-gray-700 w-[200px] text-xl gap-4 h-[50px] rounded-3xl text-white font-bold">
+                  Go To Plan
+                  <ArrowBigRight/>
+                </Button>
+                </Link>
+      </div>
+      <div className="w-full bg-gradient-to-b from-gray-600 to-gray-700 via-gray-800 p-8 rounded-2xl shadow-lg space-y-6">
         <div className="text-center space-y-2">
           <h1 className="text-2xl font-bold text-white">
             Welcome! Create your personalized plan here.
@@ -231,6 +243,7 @@ export default function PlanGeneratorForm() {
               </div>
           </div>
         </form>
+      </div>
       </div>
     </div>
   );
