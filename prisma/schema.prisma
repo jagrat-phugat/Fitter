@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+        
+model UserForm {
+
+  id            String  @id
+  age           Int
+  weight        Float
+  height        Float
+  gender        String
+  bmi           Float
+  goal          String
+  bodyType      String
+  pushups       Int
+  pullups       Int
+  squats        Int
+  crunches      Int
+  intensity     String
+  focusArea     String
+  workoutPlace  String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  plan          Plan[]
+
+}
+
+model Plan {
+
+  id          String    @id @default(uuid())
+  content     Json
+  userFormId  String    @unique
+  userForm    UserForm  @relation(fields: [userFormId], references: [id])
+
+}
+
+model DailyProgress {
+  id           String   @id @default(cuid())
+  userId       String
+  date         DateTime @unique
+  day          String
+  workoutDone  Boolean  @default(false)
+  dietDone     Boolean  @default(false)
+  createdAt    DateTime @default(now())
+}
+
+
