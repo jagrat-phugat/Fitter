@@ -8,33 +8,33 @@ Progress Tracker
 
 Authentication
 
+(add screenshot)
 
+(add screenshot)
 
-
-
-
+(add screenshot)
 
 📁 Place your screenshots inside a /screenshots folder at the root of your project.
 
 ✨ Features
-🔐 Clerk authentication (secure sign-up & login)
+🔐 Clerk Authentication: Secure sign-up & login flows.
 
-🧠 AI-powered weekly plan generator (via Gemini API)
+🧠 AI-Powered Plan Generator: Weekly plans created via the Gemini API.
 
-✅ Daily progress tracking with checkboxes
+✅ Daily Progress Tracking: Interactive checkboxes to monitor completion.
 
-📊 Animated progress charts (weekly/monthly)
+📊 Animated Progress Charts: Visualize weekly and monthly progress.
 
-💾 Supabase + Prisma for data persistence
+💾 Data Persistence: Supabase and Prisma for a reliable backend.
 
-⚡ Clean and responsive UI with TailwindCSS + Lucide Icons
+⚡ Responsive UI: Clean interface built with Shadcn-UI, TailwindCSS & Lucide Icons.
 
-🔁 Auto-reset progress every day + weekly archiving
+🔁 Automated Resets: Progress resets daily, and plans are archived weekly.
 
 🛠 Tech Stack
 Framework: Next.js (App Router, TypeScript)
 
-Styling: ShadCN-UI + TailwindCSS + Lucide Icons
+Styling: Shadcn-UI + TailwindCSS + Lucide Icons
 
 Authentication: Clerk
 
