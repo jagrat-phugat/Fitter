@@ -47,6 +47,8 @@ A full-stack fitness planning application that generates **personalized weekly w
 
 ## 📁 Folder Structure
 
+```
+
 src/
 ├── app/              → App Router pages and API routes
 │   ├── (auth)/       → Clerk login/signup routes
@@ -59,6 +61,8 @@ src/
 prisma/
 ├── schema.prisma     → Prisma schema
 └── migrations/       → DB migration history
+
+```
 
 ---
 ## ⚙️ Getting Started
@@ -81,7 +85,7 @@ pnpm install
 
 ### 3. Set Up Environment Variables
 
-Create a ```bash .env.local ``` file in the root of your project:
+Create a ```.env.local ``` file in the root of your project:
 
 ```bash
 DATABASE_URL=your_supabase_database_url
