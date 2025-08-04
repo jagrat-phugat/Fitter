@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🏋️‍♂️ Fitter – Personalized Fitness & Diet Planner
+A full-stack fitness planning application that generates personalized weekly workout and diet plans based on user input. Users can track daily progress, mark tasks as done, and view historical charts — all with secure authentication and real-time database integration.
 
-## Getting Started
+📸 Screenshots
+Weekly Plan Page
 
-First, run the development server:
+Progress Tracker
 
-```bash
+Authentication
+
+
+
+
+
+
+
+📁 Place your screenshots inside a /screenshots folder at the root of your project.
+
+✨ Features
+🔐 Clerk authentication (secure sign-up & login)
+
+🧠 AI-powered weekly plan generator (via Gemini API)
+
+✅ Daily progress tracking with checkboxes
+
+📊 Animated progress charts (weekly/monthly)
+
+💾 Supabase + Prisma for data persistence
+
+⚡ Clean and responsive UI with TailwindCSS + Lucide Icons
+
+🔁 Auto-reset progress every day + weekly archiving
+
+🛠 Tech Stack
+Framework: Next.js (App Router, TypeScript)
+
+Styling: ShadCN-UI + TailwindCSS + Lucide Icons
+
+Authentication: Clerk
+
+Database: Supabase (PostgreSQL)
+
+ORM: Prisma
+
+API Integration: Gemini (Google AI API)
+
+Hosting: Vercel
+
+📁 Folder Structure
+src/
+├── app/              → App Router pages and API routes
+│   ├── (auth)/       → Clerk login/signup routes
+│   ├── api/          → API endpoints (plan, progress)
+│   └── (dashboard)/  → Main UI pages (plan, progress, tracker)
+├── components/       → Shared UI components
+├── lib/              → Prisma client, utilities
+└── styles/           → Global CSS
+prisma/
+├── schema.prisma     → Prisma schema
+└── migrations/       → DB migration history
+
+⚙️ Getting Started
+1. Clone the Repository
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME
+
+2. Install Dependencies
+npm install
+# or
+pnpm install
+
+3. Set Up Environment Variables
+Create a .env.local file in the root of your project:
+
+DATABASE_URL=your_supabase_database_url
+CLERK_SECRET_KEY=your_clerk_secret_key
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+GEMINI_API_KEY=your_gemini_api_key
+
+🛑 Never commit .env.local — it should remain private.
+
+4. Set Up Prisma
+npx prisma generate
+npx prisma migrate dev --name init
+
+5. Run the Development Server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit http://localhost:3000 to view the app locally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🧪 Environment Variables Reference
+DATABASE_URL: Your Supabase DB URL (PostgreSQL).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+CLERK_SECRET_KEY: Clerk backend secret key.
 
-## Learn More
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: Clerk frontend publishable key.
 
-To learn more about Next.js, take a look at the following resources:
+GEMINI_API_KEY: Google Gemini API key for AI plan generation.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📊 Database Schema (Prisma)
+Example schema for daily progress:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+model DailyProgress {
+  id          String   @id @default(cuid())
+  userId      String
+  date        DateTime @unique
+  day         String
+  workoutDone Boolean  @default(false)
+  dietDone    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
 
-## Deploy on Vercel
+Prisma and Supabase are integrated using the @prisma/client and Supabase's connection string.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+💡 Future Enhancements
+🔔 Push notifications for daily reminders
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🏆 Gamified achievements and rewards
+
+⏱ Timer-based workouts
+
+🧍‍♀️ Social sharing of fitness plans
+
+📱 Convert to a Progressive Web App (PWA)
+
+🧑‍💻 Author
+Jagrat Phugat
