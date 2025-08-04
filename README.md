@@ -13,7 +13,7 @@ A full-stack fitness planning application that generates **personalized weekly w
 ![Progress Tracker](./screenshots/progress.png)
 
 ### Planner
-![Planner] (./screenshots/Planner.png)
+![Planner](./screenshots/planner.png)
 
 ### Dashboard  
 ![Dashboard](./screenshots/dashboard.png)
