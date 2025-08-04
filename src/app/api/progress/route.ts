@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
+import { DailyProgress } from "@prisma/client"
 
 export async function GET(req: Request) {
   const { userId } = await auth();
