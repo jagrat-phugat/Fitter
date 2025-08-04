@@ -66,7 +66,7 @@ export async function POST(req: Request) {
     let result;
     if (existing) {
       result = await prisma.dailyProgress.update({
-        where: { id : existing.id },
+        where: { date : parsedDate },
         data: {
           workoutDone,
           dietDone,
