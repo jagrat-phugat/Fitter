@@ -6,14 +6,17 @@ A full-stack fitness planning application that generates **personalized weekly w
 
 ## 📸 Screenshots
 
-### Weekly Plan Page  
-![Weekly Plan](./screenshots/weekly-plan.png)
+### Plans
+![Plans](./screenshots/Screenshot 2025-08-04 103318.png)
 
 ### Progress Tracker  
-![Progress Tracker](./screenshots/progress-tracker.png)
+![Progress Tracker](./screenshots/Screenshot 2025-08-04 103339.png)
+
+### Planner
+![Planner] (./screenshots/Screenshot 2025-08-04 103248.png)
 
 ### Authentication  
-![Authentication](./screenshots/authentication.png)
+![Dashboard](./screenshots/Screenshot 2025-08-04 102411.png)
 
 
 ---
