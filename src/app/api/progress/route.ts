@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
+import { DailyProgress } from "@prisma/client"
 
 export async function GET(req: Request) {
   const { userId } = await auth();
@@ -26,7 +27,7 @@ export async function GET(req: Request) {
   });
 
   const result = datesAsISO.map((dateStr) => {
-    const record = records.find((r) => r.date.toISOString().split("T")[0] === dateStr);
+    const record = records.find((r: DailyProgress) => r.date.toISOString().split("T")[0] === dateStr);
     const dateObj = new Date(dateStr);
     const dayName = dateObj.toLocaleDateString("en-US", { weekday: "long" });
 
