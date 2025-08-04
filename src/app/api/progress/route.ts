@@ -3,6 +3,8 @@ import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 import { DailyProgress } from "@prisma/client"
 
+type DailyProgress = Awaited<ReturnType<typeof prisma.dailyProgress.findFirst>>;
+
 export async function GET(req: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -17,7 +19,7 @@ export async function GET(req: Request) {
   const dateList = rawDates.split(",");
   const datesAsISO = dateList.map((d) => new Date(d).toISOString().split("T")[0]);
 
-  const records = await prisma.dailyProgress.findMany({
+  const records: NonNullable<DailyProgress>[] = await prisma.dailyProgress.findMany({
     where: {
       userId,
       date: {
