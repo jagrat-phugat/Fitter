@@ -15,7 +15,6 @@ A full-stack fitness planning application that generates **personalized weekly w
 ### Authentication  
 ![Authentication](./screenshots/authentication.png)
 
-> 📁 Place your screenshots inside a `/screenshots` folder at the root of your project.
 
 ---
 
