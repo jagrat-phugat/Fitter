@@ -9,7 +9,7 @@ export async function GET(req: Request) {
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const url = new URL(req.url);
-  const rawDates = url.searchParams.get("dates");
+  const rawDates = url.searchParams.get("date");
 
   if (!rawDates) {
     return NextResponse.json({ error: "Missing dates parameter" }, { status: 400 });
