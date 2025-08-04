@@ -28,7 +28,7 @@ export async function GET(req: Request) {
   });
 
   const result = datesAsISO.map((dateStr) => {
-    const record = records.find((r: DailyProgress) => r.date.toISOString().split("T")[0] === dateStr);
+    const record = records.find((r: NonNullable<DailyProgress>) => r.date.toISOString().split("T")[0] === dateStr);
     const dateObj = new Date(dateStr);
     const dayName = dateObj.toLocaleDateString("en-US", { weekday: "long" });
 
